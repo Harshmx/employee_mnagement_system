@@ -1,0 +1,90 @@
+﻿@model IEnumerable<MvcApplicationDemoCRUD.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @*<h2 align="center">Employee Management</h2>*@
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+<div class ="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+<div class="col-md-8 table-responsive">
+    <div class="pannel">
+        <div class="pannel-heading">
+            <h2 class="pannel-title" align="center">Employee Management</h2>
+        </div>
+        <div class="pnnel-body">
+<table class="table table-bordered table-hover table-condensed">
+    <tr class="danger">
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th >
+            <label>Action</label>
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr class="active">
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salary)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @* @Html.ActionLink("Details", "Details", new { id=item.ID }) |*@
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+    
+}
+</table>
+            </div>
+        <div class="pannel-footer">
+    @*<table>
+        <tr>
+        <td>*@
+            <p>@Html.ActionLink("Click here to add new employee", "Create")</p>
+       @* </td>
+        </tr>
+    </table>*@
+            </div>
+        </div>
+</div>
+     
+        
+        <div class="col-md-2"></div>
+     </div>
+</div>
+</body>
+</html>
