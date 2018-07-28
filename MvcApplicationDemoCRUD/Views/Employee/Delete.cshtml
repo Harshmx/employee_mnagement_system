@@ -7,47 +7,70 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <h2>Delete Employee Details</h2>
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
 </header>
 <body>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+     
+ <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 form-horizontal">
+                    <div class="pannel">
+                        <div class="pannel-heading">
+                            <h2 class="pannel-title" align="center">Are you sure you want to delete this employee?</h2>
+                        </div>
+                         <div class="pnnel-body">
+                         <table class="table table-bordered table-hover table-condensed">
+                                <tr>
+                                    <td class="danger">
+                                         @Html.DisplayNameFor(model => model.FirstName):
+                                    </td>
+                                    <td class="active">
+                                         @Html.DisplayFor(model => model.FirstName)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="danger">
+                                         @Html.DisplayNameFor(model => model.LastName):
+                                    </td>
+                                    <td class="active">
+                                         @Html.DisplayFor(model => model.LastName)
+                                    </td>
+                                </tr>
+                             <tr>
+                                    <td class="danger">
+                                         @Html.DisplayNameFor(model => model.Gender):
+                                    </td>
+                                    <td class="active">
+                                         @Html.DisplayFor(model => model.Gender)
+                                    </td>
+                                </tr>
+                               <tr>
+                                    <td class="danger">
+                                         @Html.DisplayNameFor(model => model.Salary):
+                                    </td>
+                                    <td class="active">
+                                         @Html.DisplayFor(model => model.Salary)
+                                    </td>
+                                </tr>
+   
+                        </table>
+                             </div>
+                        <div class="pannel-footer">
+                            @using (Html.BeginForm()) {
+                            @Html.AntiForgeryToken()
 
-<h3>Are you sure you want to delete this employee?</h3>
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName):  
-            @Html.DisplayFor(model => model.FirstName)
-        </dt>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName):  
-            @Html.DisplayFor(model => model.LastName)
-        </dt>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Gender):  
-            @Html.DisplayFor(model => model.Gender)
-        </dt>
-
-        <dt>
-           @Html.DisplayNameFor(model => model.Salary): 
-           @Html.DisplayFor(model => model.Salary)
-        </dt>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Cancel", "Index")
-        </div>
-    }
-</div>
+                            <div class="form-actions no-color">
+                            <center><input type="submit" value="Delete" class="btn btn-default" /> | @Html.ActionLink("Cancel", "Index")</center>
+                            </div>
+                            }
+                            
+                        </div>        
+                    </div>  
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+ </div>
 </body>

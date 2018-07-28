@@ -13,6 +13,7 @@ namespace WebAPIDemo.Controllers
     {
         private EmployeeDB db = new EmployeeDB();
 
+        //fetches details of all the employees
         [ActionName("GetEmployees")]
         public List<Employee> Get(Nullable<int> Id)
         {
@@ -21,6 +22,8 @@ namespace WebAPIDemo.Controllers
             else
                 return db.Employees.Where(emp => emp.ID == Id).ToList();
         }
+
+        //adds a new employee
         [ActionName("AddEmployee")]
         public HttpStatusCode Post(Employee emp)
         {
@@ -29,6 +32,8 @@ namespace WebAPIDemo.Controllers
             return HttpStatusCode.OK;
             
         }
+
+        //updates a new employee
         [ActionName("UpdateEmployee")]
         public HttpStatusCode Put(Employee emp)
         {
@@ -36,6 +41,8 @@ namespace WebAPIDemo.Controllers
             db.SaveChanges();
             return HttpStatusCode.OK;
         }
+
+        //delete a new employee
         [ActionName("DeleteEmployee")]
         public HttpStatusCode Delete(int Id)
         {
