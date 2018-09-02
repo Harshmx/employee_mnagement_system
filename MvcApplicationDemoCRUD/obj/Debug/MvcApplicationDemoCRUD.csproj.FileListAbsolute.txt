@@ -27,4 +27,3 @@ E:\CODE\final\WebAPIDemo\MvcApplicationDemoCRUD\bin\System.Web.WebPages.Deployme
 E:\CODE\final\WebAPIDemo\MvcApplicationDemoCRUD\bin\System.Web.WebPages.Razor.xml
 E:\CODE\final\WebAPIDemo\MvcApplicationDemoCRUD\obj\Debug\MvcApplicationDemoCRUD.dll
 E:\CODE\final\WebAPIDemo\MvcApplicationDemoCRUD\obj\Debug\MvcApplicationDemoCRUD.pdb
-E:\CODE\final\WebAPIDemo\MvcApplicationDemoCRUD\obj\Debug\MvcApplicationDemoCRUD.csprojResolveAssemblyReference.cache

@@ -133,30 +133,26 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Employee.cs">
-      <DependentUpon>EmployeeDataModel.tt</DependentUpon>
+      <DependentUpon>EmployeeModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EmployeeDataModel.Context.cs">
+    <Compile Include="Models\EmployeeModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeDataModel.Context.tt</DependentUpon>
+      <DependentUpon>EmployeeModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EmployeeDataModel.cs">
+    <Compile Include="Models\EmployeeModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeDataModel.tt</DependentUpon>
+      <DependentUpon>EmployeeModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EmployeeDataModel.Designer.cs">
+    <Compile Include="Models\EmployeeModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeDataModel.edmx</DependentUpon>
+      <DependentUpon>EmployeeModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\TestDatabase.mdf" />
-    <Content Include="App_Data\TestDatabase_log.ldf">
-      <DependentUpon>TestDatabase.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -213,23 +209,29 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <EntityDeploy Include="Models\EmployeeDataModel.edmx">
+    <EntityDeploy Include="Models\EmployeeModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EmployeeDataModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>EmployeeModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\EmployeeDataModel.Context.tt">
+    <Content Include="Models\EmployeeModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EmployeeDataModel.edmx</DependentUpon>
-      <LastGenOutput>EmployeeDataModel.Context.cs</LastGenOutput>
+      <DependentUpon>EmployeeModel.edmx</DependentUpon>
+      <LastGenOutput>EmployeeModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\EmployeeDataModel.edmx.diagram">
-      <DependentUpon>EmployeeDataModel.edmx</DependentUpon>
+    <Content Include="Models\EmployeeModel.edmx.diagram">
+      <DependentUpon>EmployeeModel.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\EmployeeDataModel.tt">
+    <Content Include="Models\EmployeeModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EmployeeDataModel.edmx</DependentUpon>
-      <LastGenOutput>EmployeeDataModel.cs</LastGenOutput>
+      <DependentUpon>EmployeeModel.edmx</DependentUpon>
+      <LastGenOutput>EmployeeModel.cs</LastGenOutput>
     </Content>
+    <None Include="Properties\PublishProfiles\EmployeeAPIbyHarsh - FTP %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\EmployeeAPIbyHarsh - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\EmployeeAPIbyHarsh - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\EmployeeAPIbyHarsh - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\EmployeeManagementApplication - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\EmployeeManagementApplication - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -245,7 +247,9 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -267,13 +271,17 @@
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
@@ -296,7 +304,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>8440</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:16559/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

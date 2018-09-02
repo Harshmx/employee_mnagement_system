@@ -1,0 +1,76 @@
+﻿@model MvcApplicationDemoCRUD.Models.Employee
+
+@{
+    ViewBag.Title = "Delete";
+}
+<header>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</header>
+<body>
+     
+ <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 form-horizontal">
+                    <div class="pannel">
+                        <div class="pannel-heading">
+                            <h2 class="pannel-title" align="center">Are you sure you want to delete this employee?</h2>
+                        </div>
+                         <div class="pnnel-body">
+                         <table class="table table-bordered table-hover table-condensed">
+                                <tr>
+                                    <td class="danger">
+                                         @Html.DisplayNameFor(model => model.FirstName):
+                                    </td>
+                                    <td class="active">
+                                         @Html.DisplayFor(model => model.FirstName)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="danger">
+                                         @Html.DisplayNameFor(model => model.LastName):
+                                    </td>
+                                    <td class="active">
+                                         @Html.DisplayFor(model => model.LastName)
+                                    </td>
+                                </tr>
+                             <tr>
+                                    <td class="danger">
+                                         @Html.DisplayNameFor(model => model.Gender):
+                                    </td>
+                                    <td class="active">
+                                         @Html.DisplayFor(model => model.Gender)
+                                    </td>
+                                </tr>
+                               <tr>
+                                    <td class="danger">
+                                         @Html.DisplayNameFor(model => model.Salary):
+                                    </td>
+                                    <td class="active">
+                                         @Html.DisplayFor(model => model.Salary)
+                                    </td>
+                                </tr>
+   
+                        </table>
+                             </div>
+                        <div class="pannel-footer">
+                            @using (Html.BeginForm()) {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-actions no-color">
+                            <center><input type="submit" value="Delete" class="btn btn-default" /> | @Html.ActionLink("Cancel", "Index")</center>
+                            </div>
+                            }
+                            
+                        </div>        
+                    </div>  
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+ </div>
+</body>

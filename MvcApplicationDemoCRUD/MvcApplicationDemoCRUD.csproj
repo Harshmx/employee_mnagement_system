@@ -114,6 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -213,6 +214,15 @@
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\EmployeeManagementApplication - FTP %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\EmployeeManagementApplication - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\EmployeeManagementApplication - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\EmployeeManagementApplication - Web Deploy.pubxml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\Employeemanagementbyharsh - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\Employeemanagementbyharsh - Web Deploy.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

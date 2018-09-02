@@ -11,7 +11,7 @@ namespace WebAPIDemo.Controllers
 {
     public class EmployeeController : ApiController
     {
-        private EmployeeDB db = new EmployeeDB();
+        private Entities db = new Entities();
 
         //fetches details of all the employees
         [ActionName("GetEmployees")]

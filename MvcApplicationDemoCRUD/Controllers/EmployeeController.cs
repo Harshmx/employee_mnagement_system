@@ -8,6 +8,7 @@ using System.Net;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using System.Configuration;
 
 namespace MvcApplicationDemoCRUD.Controllers
 {
@@ -17,7 +18,9 @@ namespace MvcApplicationDemoCRUD.Controllers
         //displays the list of employees
         public ActionResult Index()
         {
-            string Url = "http://localhost:16559/api/employee/GetEmployees";
+            string UrlStart = ConfigurationManager.AppSettings["UrlStart"];
+            string Url = UrlStart + "/employee/GetEmployees";
+            //string Url = "https://employeemanagementapplication.azurewebsites.net/api/employee/GetEmployees";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             StreamReader resStream = new StreamReader(response.GetResponseStream());
@@ -39,9 +42,10 @@ namespace MvcApplicationDemoCRUD.Controllers
         {
             if (ModelState.IsValid)
             {
+                string UrlStart = ConfigurationManager.AppSettings["UrlStart"];
                 string JsonInput = JsonConvert.SerializeObject(Employee);
                 byte[] dataStream = Encoding.UTF8.GetBytes(JsonInput);
-                string request = "http://localhost:16559/api/employee/AddEmployee";
+                string request = UrlStart + "/employee/AddEmployee";
                 WebRequest webRequest = WebRequest.Create(request);
                 webRequest.Method = "POST";
                 webRequest.ContentType = "application/json";
@@ -64,7 +68,8 @@ namespace MvcApplicationDemoCRUD.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            string Url = "http://localhost:16559/api/employee/GetEmployees?Id=" + id;
+            string UrlStart = ConfigurationManager.AppSettings["UrlStart"];
+            string Url =UrlStart + "/employee/GetEmployees?Id=" + id;
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             StreamReader resStream = new StreamReader(response.GetResponseStream());
@@ -84,9 +89,10 @@ namespace MvcApplicationDemoCRUD.Controllers
         {
             if (ModelState.IsValid)
             {
+                string UrlStart = ConfigurationManager.AppSettings["UrlStart"];
                 string JsonInput = JsonConvert.SerializeObject(Employee);
                 byte[] dataStream = Encoding.UTF8.GetBytes(JsonInput);
-                string request = "http://localhost:16559/api/employee/UpdateEmployee?Id=" + Employee.ID;
+                string request = UrlStart+ "/employee/UpdateEmployee?Id=" + Employee.ID;
                 WebRequest webRequest = WebRequest.Create(request);
                 webRequest.Method = "PUT";
                 webRequest.ContentType = "application/json";
@@ -108,7 +114,8 @@ namespace MvcApplicationDemoCRUD.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            string Url = "http://localhost:16559/api/employee/GetEmployees?Id=" + id;
+            string UrlStart = ConfigurationManager.AppSettings["UrlStart"];
+            string Url = UrlStart + "/employee/GetEmployees?Id=" + id;
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             StreamReader resStream = new StreamReader(response.GetResponseStream());
@@ -129,7 +136,8 @@ namespace MvcApplicationDemoCRUD.Controllers
             //call API
             string JsonInput = JsonConvert.SerializeObject(id);
             byte[] dataStream = Encoding.UTF8.GetBytes(JsonInput);
-            string request = "http://localhost:16559/api/employee/DeleteEmployee?Id=" + id;
+            string UrlStart = ConfigurationManager.AppSettings["UrlStart"];
+            string request = UrlStart + "/employee/DeleteEmployee?Id=" + id;
             WebRequest webRequest = WebRequest.Create(request);
             webRequest.Method = "DELETE";
             webRequest.ContentType = "application/json";

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=myazuretestdb.database.windows.net;Initial Catalog=EmployeeDB;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnet-WebAPIDemo-20180714034752.mdf" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\CODE\\final\\WebAPIDemo\\WebAPIDemo\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="TestDatabaseEntities-Web.config Connection String" description="TestDatabaseEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.EmployeeDataModel.csdl|res://*/Models.EmployeeDataModel.ssdl|res://*/Models.EmployeeDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=(LocalDB)\v11.0;attachdbfilename=|DataDirectory|\TestDatabase.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\CODE\\final\\WebAPIDemo\\WebAPIDemo\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TestDatabaseEntities']/@connectionString" />
+  </parameter>
+  <parameter name="Entities-Web.config Connection String" description="Entities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.EmployeeModel.csdl|res://*/Models.EmployeeModel.ssdl|res://*/Models.EmployeeModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=myazuretestdb.database.windows.net;initial catalog=EmployeeDB;user id=Harshmx;password=Ganesh@123;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\CODE\\final\\WebAPIDemo\\WebAPIDemo\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Entities']/@connectionString" />
+  </parameter>
+</parameters>
